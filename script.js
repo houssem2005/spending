@@ -68,6 +68,10 @@ create.onclick = function () {
 // Function to create the Day Box
 function CreateDayBox(currentDay, currentDayIndex, day, month, year, products, total, isLoad = false) {
     let EvenBox = document.createElement('div');
+    EvenBox.style.backgroundImage = 'url(colom.jpg)';
+    EvenBox.style.backgroundRepeat = 'no-repeat';
+    EvenBox.style.backgroundSize = 'cover'; 
+    
     EvenBox.style.textAlign = 'center';
     EvenBox.style.width = '300px';
     EvenBox.style.height = '200px';
@@ -75,11 +79,14 @@ function CreateDayBox(currentDay, currentDayIndex, day, month, year, products, t
     EvenBox.style.borderRadius = '10px';
     EvenBox.style.marginLeft = '20px';
     EvenBox.style.marginTop = '20px';
-    EvenBox.style.overflowY = 'scroll';
+    EvenBox.style.overflowY = 'hidden';
+    EvenBox.style.color = 'white';
+    
 
     let DayTitle = document.createElement('h3');
     let deletebtn = document.createElement('button');
     deletebtn.textContent = "delete";
+    deletebtn.style.color = 'white';
     deletebtn.style.border = "none";
     deletebtn.style.background = "transparent";
     deletebtn.style.textDecoration = "underline";
@@ -99,6 +106,7 @@ function CreateDayBox(currentDay, currentDayIndex, day, month, year, products, t
     displayprice.readOnly = false; // Make it editable
     displayprice.style.background = 'transparent';
     displayprice.style.border = 'none';
+    displayprice.style.color = 'white';
 
     displayprice.onchange = function() {
         totalPerDay[currentDay] = parseFloat(displayprice.value.replace("dt", "")) || 0;
